@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_search_events"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/light_blue"
+    tools:context=".SearchEventsFragment">
+
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="@string/search"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/frame_rounded_searchbar"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:layout_toLeftOf="@id/logout"
+        android:layout_toRightOf="@id/menu_icon"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@id/menu_icon"
+        android:autofillHints="" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logout"
+        android:text="log out"
+        android:backgroundTint="@color/gray"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="8dp"/>
+    />
+
+
+    <ImageView
+        android:id="@+id/menu_icon"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:background="@color/light_blue"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/ic_menu"
+        android:contentDescription="@string/company_logo_that_navigates_to_home_page" />
+
+    <Button
+        android:id="@+id/filters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/filters"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="@color/black"
+        android:layout_below="@id/menu_icon"/>
+
+    <Button
+        android:id="@+id/button_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="@color/black"
+        android:layout_toEndOf="@id/filters"
+        android:layout_alignTop="@id/filters"/>
+
+    <Button
+        android:id="@+id/button_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/price"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="@color/black"
+        android:layout_toEndOf="@id/button_date"
+        android:layout_alignTop="@id/button_date"/>
+    <Button
+        android:id="@+id/button_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/distance"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:backgroundTint="@color/black"
+        android:layout_toEndOf="@id/button_price"
+        android:layout_alignTop="@id/button_price"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/event_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="541dp"
+        android:layout_below="@id/filters"/>
+
+</RelativeLayout>
